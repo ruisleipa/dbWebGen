@@ -61,7 +61,7 @@ FORM;
 	}
 	catch(PDOException $e) {
 		if($tables_setup_json)
-			echo json_encode(array('error' => 'Cannot connect to database.'));
+			echo json_encode(array('error' => 'Cannot connect to database: ' . $e->getMessage()));
 		else {
 			echo "<h2>ERROR: Cannot connect to database</h2>";
 			echo $form;
